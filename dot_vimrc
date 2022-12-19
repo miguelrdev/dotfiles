@@ -19,6 +19,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 " PLUGINS
 call plug#begin()
+Plug 'c9s/perlomni.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
