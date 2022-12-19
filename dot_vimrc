@@ -1,0 +1,28 @@
+set nocompatible
+set number
+set cursorline
+set cursorcolumn
+set wildmenu
+set wildmode=list:longest
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+colorscheme jellybeans
+
+" MAPPINGS
+let mapleader = ","
+
+" VIMSCRIPT
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+" PLUGINS
+call plug#begin()
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+call plug#end()
+
+" PLUGIN SETTINGS
+let g:airline#extensions#tabline#enabled = 1
