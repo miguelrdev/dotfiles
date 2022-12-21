@@ -23,7 +23,9 @@ Plug 'c9s/perlomni.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " PLUGIN SETTINGS
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1 " List buffers at top of terminal
+let g:airline#extensions#tabline#buffer_nr_show = 1 " Show buffer numbers in the list
