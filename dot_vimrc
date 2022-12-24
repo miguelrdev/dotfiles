@@ -2,6 +2,10 @@ set nocompatible
 set number
 set cursorline
 set cursorcolumn
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
 set wildmenu
 set wildmode=list:longest
 syntax on
@@ -12,10 +16,21 @@ colorscheme jellybeans
 
 " MAPPINGS
 let mapleader = ","
+" ,t to toggle NERDTree on/off
+nnoremap <leader>t :NERDTreeToggle<CR>
+" Tab for next buffer
+nnoremap <Tab> :bn<CR>
+" Shift+Tab for next window
+nnoremap <S-Tab> <C-w>w
+" Shift+j for page down
+nnoremap <S-j> <PageDown>
+" Shift+k for page up
+nnoremap <S-k> <PageUp>
 
 " VIMSCRIPT
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
-autocmd BufRead,BufNewFile *.md setlocal spell
+" Turn on spell checking for markdown and git commits
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
 
 " PLUGINS
 call plug#begin()
@@ -27,5 +42,9 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " PLUGIN SETTINGS
-let g:airline#extensions#tabline#enabled = 1 " List buffers at top of terminal
-let g:airline#extensions#tabline#buffer_nr_show = 1 " Show buffer numbers in the list
+" List buffers at top of terminal
+let g:airline#extensions#tabline#enabled = 1
+" Show buffer name only
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+" Show buffer numbers in the list
+let g:airline#extensions#tabline#buffer_nr_show = 1
