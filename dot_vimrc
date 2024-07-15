@@ -33,6 +33,7 @@ autocmd FileType gitcommit setlocal spell
 
 " PLUGINS
 call plug#begin()
+Plug 'davidhalter/jedi-vim'
 Plug 'c9s/perlomni.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'preservim/nerdcommenter'
@@ -50,3 +51,5 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Show buffer numbers in the list
 let g:airline#extensions#tabline#buffer_nr_show = 1
+" Default collides with my page up mapping
+let g:jedi#documentation_command = "<leader>k"
