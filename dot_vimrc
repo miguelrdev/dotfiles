@@ -25,6 +25,7 @@ nnoremap <S-Tab> <C-w>w
 nnoremap <S-j> <PageDown>
 " Shift+k for page up
 nnoremap <S-k> <PageUp>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " VIMSCRIPT
 " Turn on spell checking for markdown and git commits
@@ -33,9 +34,12 @@ autocmd FileType gitcommit setlocal spell
 
 " PLUGINS
 call plug#begin()
-Plug 'davidhalter/jedi-vim'
+Plug 'ycm-core/youcompleteme'
 Plug 'c9s/perlomni.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -51,5 +55,3 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Show buffer numbers in the list
 let g:airline#extensions#tabline#buffer_nr_show = 1
-" Default collides with my page up mapping
-let g:jedi#documentation_command = "<leader>k"
