@@ -36,7 +36,6 @@ autocmd FileType gitcommit setlocal spell
 " PLUGINS
 call plug#begin()
 Plug 'ycm-core/youcompleteme'
-Plug 'c9s/perlomni.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'nanotech/jellybeans.vim'
