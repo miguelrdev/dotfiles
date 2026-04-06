@@ -56,3 +56,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Show buffer numbers in the list
 let g:airline#extensions#tabline#buffer_nr_show = 1
+" GitHub Copilot key bindings
+imap <silent><expr> <C-a> copilot#Accept("\<CR>")
+imap <silent><expr> <C-l> copilot#AcceptLine()
+imap <silent><expr> <C-w> copilot#AcceptWord()
+imap <silent><expr> <C-n> copilot#Next()
+imap <silent><expr> <C-p> copilot#Previous()
+imap <silent><expr> <C-d> copilot#Dismiss()
